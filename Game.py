@@ -26,15 +26,18 @@ class Game:
 
     def player_turn(self):
         while not self.player.hand.is_bust():
-            print()
-            choice = input("Choose your move: [h]it or [s]tand: ").strip().lower()
-            if choice == "h":
-                self.player.hit(self.deck)
-            elif choice == "s":
-                print("You stand.")
+            if self.player.hand.get_hand_value() == 21:
                 break
             else:
-                print("Please type 'h' to hit or 's' to stand.")
+                print()
+                choice = input("Choose your move: [h]it or [s]tand: ").strip().lower()
+                if choice == "h":
+                    self.player.hit(self.deck)
+                elif choice == "s":
+                    print("You stand.")
+                    break
+                else:
+                    print("Please type 'h' to hit or 's' to stand.")
 
     def dealer_turn(self):
         print()

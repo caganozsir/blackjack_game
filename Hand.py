@@ -8,7 +8,7 @@ class Hand:
     def show_player_hand(self):
         for card in self.cards:
             print(card)
-        print(self.get_hand_value())
+        print("Player has " + str(self.get_hand_value()))
 
     def show_dealer_hand(self):
         print(self.cards[0])
